@@ -19,8 +19,8 @@ t_woody		init_woody(unsigned char *content)
         woodyboi.shdr = (Elf64_Shdr *)&content[woodyboi.ehdr->e_shoff];
         woodyboi.phdr = (Elf64_Phdr *)&content[woodyboi.ehdr->e_phoff];
         woodyboi.patch_return = convert_address(woodyboi.ehdr->e_entry);
-	woodyboi.string_table = &content[woodyboi.shdr[
-         	woodyboi.ehdr->e_shstrndx].sh_offset];
+	woodyboi.string_table = (char*)(&content[woodyboi.shdr[
+         	woodyboi.ehdr->e_shstrndx].sh_offset]);
 	return (woodyboi);
 }
 

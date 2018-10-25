@@ -8,7 +8,8 @@ SRC	= 	main.c \
 		update_offsets.c \
 		write_file.c \
 		convert_address.c \
-		woodywoodpacker.c
+		woodywoodpacker.c \
+		mapping.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -17,7 +18,7 @@ LIB 	= 	alylibc/lib.a
 all:
 	make -C alylibc
 	gcc -Wall -Werror -Wextra -c $(SRC)
-	gcc -o $(EXEC) $(LIB)
+	gcc -o $(EXEC) $(OBJ) $(LIB)
 
 clean:
 	make clean -C alylibc

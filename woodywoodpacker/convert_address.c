@@ -13,7 +13,7 @@ unsigned char		*convert_address(Elf64_Addr original_entry)
 		((original_entry << 8) & 0xff0000) |
 		((original_entry >> 8) & 0xff00) |
 		((original_entry << 24) & 0xff000000);
-	address = (char *)malloc(sizeof(char) * 7);
+	address = (unsigned char *)malloc(sizeof(unsigned char) * 7);
 	bytes[0] = (swapped >> 24) & 0xff;
 	bytes[1] = (swapped >> 16) & 0xff;
 	bytes[2] = (swapped >> 8) & 0xff;

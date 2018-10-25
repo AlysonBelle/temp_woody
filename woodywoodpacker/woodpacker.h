@@ -68,9 +68,11 @@ void            	update_program_header_table_offsets(t_woody *wood,
 void            	write_file(t_woody wood, t_data_sect data,
                 unsigned char *content, size_t size);
 
+/*
+** Mapping the contents of the file into the unsigned char 
+*/
 
-
-
+void            	mapping(unsigned char **content, size_t *size, char *filename);
 
 
 
